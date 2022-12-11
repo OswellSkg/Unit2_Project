@@ -7,7 +7,7 @@
 
 ## Problem definition
 The campus of UWC ISAK Japan is located in a small town on a mountain, Karuizawa. The altitude is nearly 1000m, and the humidity as well as temperature is 
-lower compared to that of the sea surface ground. From SKINKRAFT LABORATORY, the low humidity and temperature causes a lot of problems such as excessive sweating, acne breakout, anhidrosis and heat rash . For that reason, Student A from UWC ISAK Japan has requested a way to be updated of local temperature and humidity, and furthermore be updated of future temperature and humidity predictions for low-cost budget. This is also going to be used to help the client decide how they dress the next day accordingly to the predicted temperature and humidity.
+lower compared to that of the sea surface ground. From SKINKRAFT LABORATORY, the low humidity and temperature causes a lot of problems such as excessive sweating, acne breakout, anhidrosis and heat rash . For that reason, Student A from UWC ISAK Japan has requested an application to be updated of local temperature and humidity, and furthermore be updated of future temperature and humidity predictions for low-cost budget. This is also going to be used to help the client decide how they dress the next day accordingly to the predicted temperature and humidity.
 
 Source: https://skinkraft.com/blogs/articles/how-does-humidity-affect-your-skin#how-does-humidity-affect-your-skin
 
