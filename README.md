@@ -75,6 +75,19 @@ Considering the budgetary constrains of the client and the hardware requirements
 | Do you want to continue? Please enter either yes or no:  | yes                |
 | Please enter an option                                   | 3/ Exit            |
 
+| Code                                                     | Process         |
+|----------------------------------------------------------|-----------------|
+| Please enter an option                                   | 1/ Get humidity |
+| Do you want to continue? Please enter either yes or no:  | No              |
+| Exit                                                     |                 |
+
+| Code                                                     | Process             |
+|----------------------------------------------------------|---------------------|
+| Please enter an option                                   | 1/ Get humidity     |
+| Do you want to continue? Please enter either yes or no:  | Yes                 |
+| Please enter an option                                   | 2/ Get temperature  |
+| Do you want to continue? Please enter either yes or no:  | no                  |
+| Exit                                                     |                     |
 # Criteria C: Development
 
 ## List of techniques used
