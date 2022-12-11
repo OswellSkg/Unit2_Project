@@ -45,15 +45,26 @@ Considering the budgetary constrains of the client and the hardware requirements
 
 ## Record of Tasks
 
-| Task Nomber | Planned Action                                               | Planned Outcome                                                             | Time estimate | Target completion date  | Criterion |
-|-------------|--------------------------------------------------------------|-----------------------------------------------------------------------------|---------------|-------------------------|-----------|
-|             |                                                              |                                                                             |               |                         |           |
-| 1           | Write the problem definition                                 | To describe what is our customer problem and what is his/her situation      | 10 min        | Nov 22                  | A         |
-| 2           | Read the proposed solution and success criteria              | To have a clear idea of what we have to code to solve our customer problems | 3 min         | Nov 22                  | A         |
-| 3           | Code the program to get data of the temperature and humidity | To be able to record the temperature and the humidity of the place on 48h   | 2h            | Nov 25                  | C         |
-| 4           | Record the temperature and humidity with Arduino             | To get a database of temperature and humidity                               | 48h           | dec 2                   | D         |
-| 5           | Record the temperature and humidity with Arduino             | To get a database of temperature and humidity                               | 48h           | dec3                    | D         |
-| 6           | Record the temperature and humidity with Arduino             |                                                                             |               |                         |           |
+|    | Planned Action                                               | Planned Outcome                                                             | Time estimate | Target completion date  | Criterion |
+|----|--------------------------------------------------------------|-----------------------------------------------------------------------------|---------------|-------------------------|-----------|
+| 1  | Write the problem definition                                 | To describe what is our customer problem and what is his/her situation      | 10 min        | Nov 22                  | A         |
+| 2  | Read the proposed solution                                   | To have a clear idea of what we have to code to solve our customer problems | 3 min         | Nov 22                  | A         |
+| 3  | Read the success criteria (SL)                               | To have a clear idea of what we have to implement in our project            | 3 min         | Nov 23                  | A         |
+| 4  | Look at the system diagram                                   | To have a clear idea of how Arduino works                                   | 3 min         | Nov 23                  | A         |
+| 5  | Code the program to get data of the temperature and humidity | To be able to record the temperature and the humidity of the place on 48h   | 2h            | Nov 25                  | C         |
+| 6  | Set up Arduino in the computer                               | To actually record the temperature and the humidity                         | 10 min        | Dec 2                   | C         |
+| 7  | Record the temperature and humidity with Arduino             | To get a database of temperature and humidity                               | 48h           | Dec 2                   | C         |
+| 8  | Code the menu of the application for the customer            | To allow the customer to choose his/her options                             | 20 min        | Dec 3                   | C         |
+| 9  | Code the first option of the application: get humidity       | To allow the customer to get the current humidity of the room               | 25 min        | Dec 4                   | C         |
+| 10 | Code the second option of the application: get temperature   | To allow the customer to get the current temperature of the room            | 25 min        | Dec 6                   | C         |
+| 11 | Code the third option of the application: exit               | To allow the customer to exit from the application when he/she is done      | 10 min        | Dec 6                   | C         |
+| 12 | Print the welcome message of the application                 | To present the application to the customer                                  | 3 min         | Dec 8                   | C         |
+| 13 | Code the while loop of the menu                              | To allow the customer to enter more than one option                         | 45 min        | Dec 9                   | C         |
+| 14 | Add colors to the code                                       | To lake the instructions more clear for the customer                        | 15 min        | Dec 9                   | C         |
+| 15 | Creation of the 2 flow diagrams                              | To make the design program more understandable                              | 30 min        | Dec 10                  | B         |
+| 16 | Test plan                                                    | To show to the customer how to use the application                          | 30 min        | Dec 10                  | C         |
+| 17 | Record the video                                             | To show that the application is working                                     | 7 min         | Dec 11                  | D         |
+| 18 | Make the science poster                                      | To explain the application to the customer with the graphs                  | 30 min        | Dec 12                  | D         |
 ## Test Plan
 
 # Criteria C: Development
