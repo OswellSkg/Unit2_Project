@@ -44,10 +44,16 @@ Considering the budgetary constrains of the client and the hardware requirements
 **Fig.1** shows the system diagram for the proposed solution (**SL**). The indoor variables will be measured using an Arduino microprocessor and the sensor DHT11 conencted to the local computer (Laptop) located inside a room. The outdoor variables will be requested to the remote server using a GET request to the API of the server at ```192.168.6.147/readings```. The local values are stored in a CSV database locally.
 
 ## Record of Tasks
-| Task No | Planned Action                                                | Planned Outcome                                                                                                 | Time estimate | Target completion date | Criterion |
-|---------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Write the Problem context                        | 10min         | Nov 22                 | A         |
 
+| Task Nomber | Planned Action                                               | Planned Outcome                                                             | Time estimate | Target completion date  | Criterion |
+|-------------|--------------------------------------------------------------|-----------------------------------------------------------------------------|---------------|-------------------------|-----------|
+|             |                                                              |                                                                             |               |                         |           |
+| 1           | Write the problem definition                                 | To describe what is our customer problem and what is his/her situation      | 10 min        | Nov 22                  | A         |
+| 2           | Read the proposed solution and success criteria              | To have a clear idea of what we have to code to solve our customer problems | 3 min         | Nov 22                  | A         |
+| 3           | Code the program to get data of the temperature and humidity | To be able to record the temperature and the humidity of the place on 48h   | 2h            | Nov 25                  | C         |
+| 4           | Record the temperature and humidity with Arduino             | To get a database of temperature and humidity                               | 48h           | dec 2                   | D         |
+| 5           | Record the temperature and humidity with Arduino             | To get a database of temperature and humidity                               | 48h           | dec3                    | D         |
+| 6           | Record the temperature and humidity with Arduino             |                                                                             |               |                         |           |
 ## Test Plan
 
 # Criteria C: Development
