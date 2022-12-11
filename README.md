@@ -60,7 +60,7 @@ Considering the budgetary constrains of the client and the hardware requirements
 | 11 | Code the third option of the application: exit               | To allow the customer to exit from the application when he/she is done      | 10 min        | Dec 6                   | C         |
 | 12 | Print the welcome message of the application                 | To present the application to the customer                                  | 3 min         | Dec 8                   | C         |
 | 13 | Code the while loop of the menu                              | To allow the customer to enter more than one option                         | 45 min        | Dec 9                   | C         |
-| 14 | Add colors to the code                                       | To lake the instructions more clear for the customer                        | 15 min        | Dec 9                   | C         |
+| 14 | Add colors to the code                                       | To make the instructions more clear for the customer                        | 15 min        | Dec 9                   | C         |
 | 15 | Creation of the 2 flow diagrams                              | To make the design program more understandable                              | 30 min        | Dec 10                  | B         |
 | 16 | Test plan                                                    | To show to the customer how to use the application                          | 30 min        | Dec 10                  | C         |
 | 17 | Record the video                                             | To show that the application is working                                     | 7 min         | Dec 11                  | D         |
