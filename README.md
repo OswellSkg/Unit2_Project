@@ -67,6 +67,14 @@ Considering the budgetary constrains of the client and the hardware requirements
 | 18 | Make the science poster                                      | To explain the application to the customer with the graphs                  | 30 min        | Dec 12                  | D         |
 ## Test Plan
 
+| Code                                                     | Process            |
+|----------------------------------------------------------|--------------------|
+| Please enter an option                                   | 1/ Get humidity    |
+| Do you want to continue? Please enter either yes or no:  | Yes                |
+| Please enter an option:                                  | 2/ Get temperature |
+| Do you want to continue? Please enter either yes or no:  | yes                |
+| Please enter an option                                   | 3/ Exit            |
+
 # Criteria C: Development
 
 ## List of techniques used
