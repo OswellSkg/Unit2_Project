@@ -78,6 +78,82 @@ Considering the budgetary constrains of the client and the hardware requirements
 | Non-Functional:<br>Usability Testing   | The program that receives humidity and temperature<br>data from the DHT11 sensor through the Arduino <br>writes its data in an user-friendly way. | 1. Have the DHT11 sensor and Arduino set up and<br>connected to the laptop.<br>2. Execute the program on PyCharm. <br>3. Make sure that every writes that the program <br>makes is accompanied with the date and time of <br>when the action is taken. <br>4. Confirm consistency and sustainability of <br>this program.                                                                                                                                                                                                                                      | The program produces clear and user-friendly<br>csv database file that can be immediately<br>put into use. This is achieved by an organized and<br>easy-to-understand interface produced by the program.<br>Each writes that the program makes will have date <br>and time to make it easier for the user to process<br>data afterwards.                                                  |
 | Non-Functional:<br>Performance Testing | The program that receives humidity and <br>temperature data from the DHT11 sensor through <br>the Arduino executes its action every 5 minutes.    | 1. Have the DHT11 sensor and Arduino set up<br>and connected to the laptop. <br>2. Execute the program on PyCharm. <br>3. Confirm that the imported data from the DHT11<br>sensor through Arduino is written on the csv<br>database file every 5 minutes.                                                                                                                                                                                                                                                                                                      | The program demonstrates excellent performance<br>that executes every 5 minutes. The program writes<br>the collected data in the csv database file every<br>5 minutes, and produces an organized database file<br>that can be immediately put into use.                                                                                                                                   |
 | Non-Functional:<br>Usability Testing   | The program that graphs the humidity and temperature<br>data received from the DHT11 sensor through the<br>Arduino.                               | 1. Process humidity and temperature datas <br>into a csv database file.<br>2. Use the database file to list the mean, <br>sstandard deviation, maximum and minimum of the<br>collected data.<br>3. Process those values into a graph with the<br>program. <br>4. Verify that the graph is easy-to-understand<br>and uses color variations to clarify different<br>values on the graph. <br>5. Each values are clearly labelled and other <br>unclear factors that could negatively impact <br>the graph is clarified through the use of <br>labels and colors. | The program produces easy-to-understand graphs that<br>is user-friendly for immediate use. The graphs produced<br>use labels and colors to make it easy for users to<br>not only understand but also put into use in a lot of ways.<br>There are no bugs found in the program, and the graphs<br>maintain a solid quality regardless of the quality of<br>the collected data.             |
+
+## Flow diagrams
+
+## Data storage method
+
+```.py
+import serial
+import time
+from datetime import datetime
+import schedule
+
+arduino = serial.Serial(port='/dev/cu.usbserial-1420', baudrate=9600, timeout=.1)
+
+def read():
+    data = ""
+    while len(data)<1:
+        data = arduino.readline()
+    return data
+```
+**fig.1**: Code from "arduino.py"(https://github.com/OswellSkg/Unit2_Project/blob/main/arduino.py)
+
+The code above in figure 1 is importing a number of libraries necessary to connect to the Arduino, and is connecting to the Arduino and is receiving the data from Arduino per line. 
+<br><br>
+
+
+```.py
+data = {
+    "hum": [],
+    "temp": [],
+}
+
+def append_data():
+    value = read() #wait until data is in the port
+    msg = value.decode('utf-8')
+    if not 'Hello' in msg:
+        msg = msg.split()
+        hum = msg[0].split(':')[1]
+        temp = msg[1].split(':')[1]
+        hum = float(hum[0:5])
+        temp = float(temp[0:5])
+        data["hum"].append(hum)
+        data["temp"].append(temp)
+        dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        print(data)
+        with open("hum_temp_database.csv", "a") as file:
+            file.write(f'\n{dt_string},{hum},{temp}')
+
+dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+print(f"Starting data collection at {dt_string}")
+
+schedule.every(5).minutes.do(append_data)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+```
+**fig2**: Code from "arduino.py"(https://github.com/OswellSkg/Unit2_Project/blob/main/arduino.py)
+
+The code above in the figure 2 is creating a dictionary for two lists, "hum" and "temp." After that, it is appending the data received from the Arduino into a csv file named "hum_temp_database.csv" along with the live date and time. It is also appending the humidity and temperature values into the lists in the dictionary. This process is executed every 5 minutes. 
+<br><br>
+
+
+<img width="320" alt="Screen Shot 2022-12-13 at 21 21 23" src="https://user-images.githubusercontent.com/112055140/207316682-2fa8d834-db2e-474d-b17a-2804d4490eb3.png">
+
+**fig3**: A screenshot of the csv file, "hum_temp_database.csv"(https://github.com/OswellSkg/Unit2_Project/blob/main/hum_temp_database.csv)
+
+The screenshot above in figure 3 shows how the data received from Arduino is being appeneded into "hum_temp_database.csv" with live date and time. As seen in the screenshot, the append happens per line. First comes the date, followed with the time, and finally humidity and temperature. This is happening every 5 minutes for 48 hours, resulting in a total of 577 lines. 
+<br><br>
+
+
+<img width="374" alt="Screen Shot 2022-12-13 at 21 26 51" src="https://user-images.githubusercontent.com/112055140/207317790-58498456-7c12-405d-942e-4d5a8f5f6eb1.png">
+
+**fig4**: A screenshot of the dictionary that includes the 'hum' and 'temp' lists(https://github.com/OswellSkg/Unit2_Project/blob/main/hum_temp_database_dict.py)
+
+The screenshot above in figure 4 shows the dictionary that includes the 'hum' and 'temp' lists. The dictionary makes it extremely easy for Lison and myself to process the data and plot it into a graph. 
+
+
 # Criteria C: Development
 
 ## List of techniques used
