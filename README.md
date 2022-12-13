@@ -161,11 +161,12 @@ The screenshot above in figure 4 shows the dictionary that includes the 'hum' an
 2. For loop
 3. Functions
 4. Variables
-5. Lists
-6. File reading
-7. File appending
-8. Plotting graph
-9. Request/Get from server
+5. Dictionaries
+6. Lists
+7. File reading
+8. File appending
+9. Plotting graph
+10. Request/Get from server
 
 
 ## Libraries used:
@@ -183,6 +184,8 @@ The screenshot above in figure 4 shows the dictionary that includes the 'hum' an
 
 ### 1. The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours.
 <br>
+
+We used Matplotlib library to plot the Humidity and Temperature of both Local and Remote locations over a period of 48 hours, and visually represent the datas colelcted. Over the process, we also read from the 'hum' and 'temp' lists in the data dictionary that we stored the Humidity and Temperature data of Local location, and also used requests library in order to obtain Humidity and Temperature datas of Remote location. 
 
 ```.py
 #Smoothed Plot of the Humidity levels for Local location
@@ -254,6 +257,7 @@ plt.title('Smoothed Graph', fontsize=14, fontweight='bold', y=1, x=0.5, color='b
 
 ### 2. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. (SL: linear model), (HL: non-lineal model)
 <br>
+We used NumPy library and Matplotlib library to plot a linear model of best fit for each of the graphs. First, we used Numpy in order to idetify the slope of the linear equation, using variables m and b. Then we used the Matplotlib library to plot the linear equation across the graph. 
 
 ```.py
 #linear model for Humidity levels for Local location
