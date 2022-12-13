@@ -133,7 +133,7 @@ while True:
     schedule.run_pending()
     time.sleep(1)
 ```
-**fig2**: Code from "arduino.py"(https://github.com/OswellSkg/Unit2_Project/blob/main/arduino.py)
+**fig2**: Code from "arduino.py"[https://github.com/OswellSkg/Unit2_Project/blob/main/arduino.py]
 
 The code above in the figure 2 is creating a dictionary for two lists, "hum" and "temp." After that, it is appending the data received from the Arduino into a csv file named "hum_temp_database.csv" along with the live date and time. It is also appending the humidity and temperature values into the lists in the dictionary. This process is executed every 5 minutes. 
 <br><br>
@@ -253,6 +253,8 @@ plt.title('Smoothed Graph', fontsize=14, fontweight='bold', y=1, x=0.5, color='b
 <br><br>
 
 ### 2. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. (SL: linear model), (HL: non-lineal model)
+<br>
+
 ```.py
 #linear model for Humidity levels for Local location
 m,b=np.polyfit(x_values,data['hum'],1)
@@ -309,12 +311,40 @@ plt.plot(x_line,y_line,'dodgerblue', label='Linear Model')
 **fig4**: Linear model of Temperature for Remote(Code&Graph)
 <br><br>
 
-
-
-
-
-
 ### 3. The solution provides a comparative analysis for the Humidity and Temperature levels for each Local and Remote locations including mean, standad deviation, minimum, maximum, and median.
+<br>
+
+```.py
+#Comparisons of the Humidity levels for Local and Remote locations
+for row1, row2, title, local_data, remote_data,y_lim in zip([0,1,2,3,4],
+                                                            [1,2,3,4,5],
+                                                            ['Mean Comparison', 'Standard Deviation Comparison', 'Max Value Comparison', 'Min Value Comparison', 'Median Comparison'],
+                                                            [local_hum_mean_ph, local_hum_standard_dev_ph, local_hum_max_v_ph, local_hum_min_v_ph, local_hum_median_ph],
+                                                            [remote_hum_mean_ph, remote_hum_standard_dev_ph, remote_hum_max_v_ph, remote_hum_min_v_ph, remote_hum_median_ph],
+                                                            [[10, 50], [0, 2], [10, 50], [10, 50], [10, 50]]):
+    #smoothing the local_data
+    x,y = smoothing(local_data)
+    #smoothing the remote_data
+    x1,y1 = smoothing(remote_data)
+    ax1 = fig1.add_subplot(gs[row1:row2, 1:2])
+    ax1.set_title(title,fontweight='bold')
+    ax1.set_ylabel('Humidity')
+    ax1.plot(x, y, 'r')
+    ax1.plot(x1, y1, 'b')
+    ax1.set_ylim(y_lim)
+    plt.plot(x, y, 'red', label='Local')
+    plt.plot(x1, y1, 'blue', label='Remote')
+    plt.title(title,fontweight='bold')
+    plt.legend(loc="upper right")
+    if row2 == 5:
+        ax1.set_xlabel('Time')
+    plt.tick_params('x', labelbottom=False)
+plt.tick_params('x', labelbottom=True)
+```
+
+**fig1**: Comparative Analysis for Humidity for Local and Remote Locations
+<br><br><br>
+
 ```.py
 #Comparisons of the Temperature levels for Local and Remote locations
 for row1, row2, title, local_data, remote_data,y_lim in zip([0,1,2,3,4],
@@ -342,12 +372,89 @@ for row1, row2, title, local_data, remote_data,y_lim in zip([0,1,2,3,4],
     plt.tick_params('x', labelbottom=False)
 plt.tick_params('x', labelbottom=True)
 ```
-
+**fig2**: Comparative Analysis for Temperature for Local and Remote Locations
+<br><br>
 
 ### 4. (SL)The Local samples are stored in a csv file and (HL) posted to the remote server.
+<br>
 
+```.py
+def append_data():
+    value = read() #wait until data is in the port
+    msg = value.decode('utf-8')
+    if not 'Hello' in msg:
+        msg = msg.split()
+        hum = msg[0].split(':')[1]
+        temp = msg[1].split(':')[1]
+        hum = float(hum[0:5])
+        temp = float(temp[0:5])
+        data["hum"].append(hum)
+        data["temp"].append(temp)
+        dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        print(data)
+        with open("hum_temp_database.csv", "a") as file:
+            file.write(f'\n{dt_string},{hum},{temp}')
+```
+
+**fig1**: A function that appends data into the csv file, "hum_temp_database.csv"
+<br><br><br>
+
+<img width="651" alt="Screen Shot 2022-12-13 at 23 28 31" src="https://user-images.githubusercontent.com/112055140/207359989-b0ce6f30-1f53-4bff-854a-8149b8c9054d.png">
+
+**fig2**: A screenshot of the csv file, "hum_temp_database.csv"
+<br><br>
 
 ### 5. Create a prediction the subsequent 12 hours for both temperature and humidity.
+<br>
+
+```.py
+#Prediction Line for Humidity for Local location
+prediction_line = np.linspace(len(data['hum']), len(data['hum'])*5//4, len(data['hum'])*5//4)
+prediction_y_line = []
+for i in prediction_line:
+    prediction_y_line.append(m*(i)+b)
+plt.plot(prediction_line, prediction_y_line, 'b--', label='Prediction')
+```
+<img width="715" alt="Screen Shot 2022-12-13 at 22 09 30" src="https://user-images.githubusercontent.com/112055140/207326976-a21e200e-2cc3-4d3b-a31f-16b3964de049.png">
+
+**fig1**: Prediction Line for Humidity for Local(Code&Graph)
+<br><br><br>
+
+```.py
+#Prediction Line for Temperature for Local location
+prediction_line = np.linspace(len(data['temp']), len(data['temp'])*5//4, len(data['temp'])*5//4)
+prediction_y_line = []
+for i in prediction_line:
+    prediction_y_line.append(m*(i)+b)
+plt.plot(prediction_line, prediction_y_line, 'b--', label='Prediction')
+```
+<img width="743" alt="Screen Shot 2022-12-13 at 22 10 12" src="https://user-images.githubusercontent.com/112055140/207327037-e8891d9e-12fe-4bdc-bb9a-8eecc683d60e.png">
+
+**fig2**: Prediction Line for Temperature for Local(Code&Graph)
+<br><br><br>
+
+```.py
+#Prediction Line for Humidity for Remote location
+p = np.poly1d(np.polyfit(x_morning_to_noon,hum_morning_to_noon,1))
+x_line = [len(hum),len(hum)+len(hum_morning_to_noon)]
+plt.plot(x_line,p(x_line)+35,'b--',label='Linear Model(Prediction)')
+```
+<img width="719" alt="Screen Shot 2022-12-13 at 22 10 24" src="https://user-images.githubusercontent.com/112055140/207327058-92ae2eb8-cfc6-47cf-acad-7c54d07bee6e.png">
+
+**fig3**: Prediction Line for Humidity for Remote(Code&Graph)
+<br><br><br>
+
+```.py
+#Prediction Line for Temperature for Remote location
+p = np.poly1d(np.polyfit(x_morning_to_noon,temp_morning_to_noon,1))
+x_line = [len(temp),len(temp)+len(temp_morning_to_noon)]
+plt.plot(x_line,p(x_line)-20,'b--',label='Linear Model(Prediction)')
+```
+<img width="723" alt="Screen Shot 2022-12-13 at 22 10 49" src="https://user-images.githubusercontent.com/112055140/207327081-5c99a231-be97-4dc3-9959-d82fbce5acdd.png">
+
+**fig4**: Prediction Line for Temperature for Remote(Code&Graph)
+<br><br>
+
 
 
 ### 6. A poster summarizing the visual representations, model and analysis is created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
