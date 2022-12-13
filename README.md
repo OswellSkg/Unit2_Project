@@ -341,8 +341,9 @@ for row1, row2, title, local_data, remote_data,y_lim in zip([0,1,2,3,4],
     plt.tick_params('x', labelbottom=False)
 plt.tick_params('x', labelbottom=True)
 ```
+<img width="350" alt="Screen Shot 2022-12-13 at 23 47 01" src="https://user-images.githubusercontent.com/112055140/207365120-da44fa8b-342b-4066-a948-5388ff6a5db0.png">
 
-**fig1**: Comparative Analysis for Humidity for Local and Remote Locations
+**fig1**: Comparative Analysis for Humidity for Local and Remote Locations(Code&Graph)
 <br><br><br>
 
 ```.py
@@ -372,6 +373,8 @@ for row1, row2, title, local_data, remote_data,y_lim in zip([0,1,2,3,4],
     plt.tick_params('x', labelbottom=False)
 plt.tick_params('x', labelbottom=True)
 ```
+<img width="360" alt="Screen Shot 2022-12-13 at 23 47 48" src="https://user-images.githubusercontent.com/112055140/207365291-897e3d93-39b3-43d4-ab2e-a32dfdd1ea35.png">
+
 **fig2**: Comparative Analysis for Temperature for Local and Remote Locations
 <br><br>
 
