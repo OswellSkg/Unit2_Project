@@ -41,7 +41,7 @@ Considering the budgetary constrains of the client and the hardware requirements
 
 ## System Diagram **SL**
 
-![sysdim_sl](https://user-images.githubusercontent.com/112055140/203182724-3269caac-827f-4df0-aca7-fdd1c872a1a6.png)
+<img width="968" alt="Screen Shot 2022-12-13 at 9 44 03 PM" src="https://user-images.githubusercontent.com/112055140/207367039-e4b6b86d-2e1d-4aaf-a6df-03e6c2d44ea3.png">
 
 **Fig.1** shows the system diagram for the proposed solution (**SL**). The indoor variables will be measured using an Arduino microprocessor and the sensor DHT11 conencted to the local computer (Laptop) located inside a room. The outdoor variables will be requested to the remote server using a GET request to the API of the server at ```192.168.6.147/readings```. The local values are stored in a CSV database locally.
 
