@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 
-
-
 def smoothing(data:list, size_window:int=12)->list:
     x = [] #horizontal axis
     y = [] #smoothed version
