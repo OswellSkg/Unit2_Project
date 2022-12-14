@@ -80,6 +80,22 @@ Considering the budgetary constrains of the client and the hardware requirements
 | Non-Functional:<br>Usability Testing   | The program that graphs the humidity and temperature<br>data received from the DHT11 sensor through the<br>Arduino.                               | 1. Process humidity and temperature datas <br>into a csv database file.<br>2. Use the database file to list the mean, <br>sstandard deviation, maximum and minimum of the<br>collected data.<br>3. Process those values into a graph with the<br>program. <br>4. Verify that the graph is easy-to-understand<br>and uses color variations to clarify different<br>values on the graph. <br>5. Each values are clearly labelled and other <br>unclear factors that could negatively impact <br>the graph is clarified through the use of <br>labels and colors. | The program produces easy-to-understand graphs that<br>is user-friendly for immediate use. The graphs produced<br>use labels and colors to make it easy for users to<br>not only understand but also put into use in a lot of ways.<br>There are no bugs found in the program, and the graphs<br>maintain a solid quality regardless of the quality of<br>the collected data.             |
 
 ## Flow diagrams
+<br>
+
+![flow chart 2 drawio](https://user-images.githubusercontent.com/112055140/207601967-fbba7250-1a69-4804-b8e1-1cfffbae2420.png)
+
+**fig1**: 
+<br><br><br>
+
+![flow chart 3 drawio](https://user-images.githubusercontent.com/112055140/207601997-188beeec-ed61-4a81-8249-d10060525da3.png)
+
+**fig2**:
+<br><br><br>
+
+![flow diagram 1 (1)](https://user-images.githubusercontent.com/112055140/207601988-d16cbf68-1ad7-4c5c-9a31-6a72558252de.jpg)
+
+**fig3**:
+<br><br>
 
 ## Data storage method
 
