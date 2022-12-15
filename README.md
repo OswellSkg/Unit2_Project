@@ -84,17 +84,17 @@ Considering the budgetary constrains of the client and the hardware requirements
 
 ![flow chart 2 drawio](https://user-images.githubusercontent.com/112055140/207601967-fbba7250-1a69-4804-b8e1-1cfffbae2420.png)
 
-**fig1**: 
+**fig1**: A program that connects to Arduino, request data, and append it on a csv file as well as two lists in one dictionary. 
 <br><br><br>
 
 ![flow chart 3 drawio](https://user-images.githubusercontent.com/112055140/207601997-188beeec-ed61-4a81-8249-d10060525da3.png)
 
-**fig2**:
+**fig2**: A program that plots the raw graph for the temperature for the local location. Uses Matplotlib library to plot the graph. 
 <br><br><br>
 
 ![flow diagram 1 (1)](https://user-images.githubusercontent.com/112055140/207601988-d16cbf68-1ad7-4c5c-9a31-6a72558252de.jpg)
 
-**fig3**:
+**fig3**: A for loop that plots the smoothed graphs of temperature comparative analysis and humidity temperature analysis for local and remote locations, using Mean, Standard Deviation, Max Value, Min Value, and Median for each respective comparison analyses. 
 <br><br>
 
 ## Data storage method
