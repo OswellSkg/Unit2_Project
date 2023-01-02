@@ -475,7 +475,9 @@ plt.plot(x_line,p(x_line)-20,'b--',label='Linear Model(Prediction)')
 
 
 
-### 6. A poster summarizing the visual representations, model and analysis is created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
+### 6. A poster summarizing the visual representations, model and analysis is created. The poster includes a recommendation about healthy levels for Temperature and Humidity.https://www.canva.com/design/DAFUpqLMxHM/LHdrvVunWBfhuVshDxyPGQ/edit
+
+https://www.canva.com/design/DAFUpqLMxHM/LHdrvVunWBfhuVshDxyPGQ/edit
 
 Paste code
 
