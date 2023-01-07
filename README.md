@@ -502,3 +502,5 @@ https://fr.wikipedia.org/wiki/Mont_Asama
 # Criteria D: Functionality
 
 A 7 min video demonstrating the proposed solution with narration
+https://www.canva.com/design/DAFVBG1tgoE/_ESVtT9ng6Gt0XyQTPMOKg/edit
+
